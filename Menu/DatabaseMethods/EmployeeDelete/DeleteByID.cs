@@ -11,8 +11,22 @@ public class DeleteById
         {
             connection.Open();
             Console.WriteLine("Enter the ID of the employee: ");
-            string? selectAnswer = Console.ReadLine();
-            int selectedEmployeeIndex = EmployeeFind.FindIndexById.FindEmployeeIndexOfId(selectAnswer);
+            int selectAnswer = 1;
+            bool validInput = false;
+            while (!validInput)
+            {
+                string answer = Console.ReadLine();
+
+                if (int.TryParse(answer, out selectAnswer))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter an integer.");
+                }
+            }
+            int selectedEmployeeIndex = EmployeeFind.FindIndexById.FindEmployeeIndexOfId(selectAnswer.ToString());
             if (selectedEmployeeIndex == -1)
             {
                 connection.Close();

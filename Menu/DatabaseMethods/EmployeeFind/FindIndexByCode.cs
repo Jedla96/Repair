@@ -12,7 +12,7 @@ public class FindIndexByCode
         {
             connection.Open();
 
-            // Find all employees with matching last names
+            // Find all employees with matching code
             NpgsqlCommand selectCommand =
                 new NpgsqlCommand($"SELECT * FROM employees WHERE code = '{code}'", connection);
             NpgsqlDataReader reader = selectCommand.ExecuteReader();
@@ -24,37 +24,20 @@ public class FindIndexByCode
             }
 
             // Display a list of matching employees and let the user choose which one to edit
-            Console.WriteLine("Enter the index of the employee: ");
-            int i = 1;
-            while (reader.Read())
-            {
+            Console.WriteLine("Employee found: \n");
+            int employeeIndex = 1;
+            reader.Read();
+            
                 string firstNameFind = reader.GetString(reader.GetOrdinal("firstname"));
                 string lastNameFind = reader.GetString(reader.GetOrdinal("lastname"));
                 string codeFind = reader.GetString(reader.GetOrdinal("code"));
 
-                Console.WriteLine($"{i} - {firstNameFind} {lastNameFind} ({codeFind})");
-                i++;
-            }
+                Console.WriteLine($"{firstNameFind} {lastNameFind} ({codeFind})\n");
 
-            reader.Close();
+                reader.Close();
 
-            int selectedEmployeeIndex;
-            do
-            {
-                string? input = Console.ReadLine();
-                if (!int.TryParse(input, out selectedEmployeeIndex) ||
-                    selectedEmployeeIndex < 1 ||
-                    selectedEmployeeIndex > i - 1)
-                {
-                    Console.WriteLine($"Invalid index. Please enter a number between 1 and {i - 1}.");
-                }
-                else
-                {
-                    break;
-                }
-            } while (true);
 
-            return selectedEmployeeIndex;
+            return employeeIndex;
         }
     }
 }

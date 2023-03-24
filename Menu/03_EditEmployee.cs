@@ -19,19 +19,14 @@ public static class MenuEditEmployee
             switch (answer)
             {
                 case "1":
-                    Console.WriteLine("Last name: ");
-
                     EditByLastName.EditEmployeeDataByIndex();
 
                     break;
                 case "2":
-                    Console.WriteLine("Code: ");
-
                     EditByCode.EditEmployeeDataByIndex();
 
                     break;
                 case "3":
-                    Console.WriteLine("ID: ");
                     EditById.EditEmployeeDataByIndex();
                     break;
                 case "4":

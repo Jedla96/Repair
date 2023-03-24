@@ -11,10 +11,23 @@ public class EditById
         {
             connection.Open();
             Console.WriteLine("Enter the ID of the employee: ");
-            string? selectAnswer = Console.ReadLine();
+            int selectAnswer = 1;
+            bool validInput = false;
+            while (!validInput)
+            {
+                string answer = Console.ReadLine();
 
+                if (int.TryParse(answer, out selectAnswer))
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter an integer.");
+                }
+            }
             // Get the employee to edit
-            int selectedEmployeeIndex = EmployeeFind.FindIndexById.FindEmployeeIndexOfId(selectAnswer);
+            int selectedEmployeeIndex = EmployeeFind.FindIndexById.FindEmployeeIndexOfId(selectAnswer.ToString());
             if (selectedEmployeeIndex == -1)
             {
                 connection.Close();
@@ -36,9 +49,7 @@ public class EditById
                 string code = editReader.GetString(editReader.GetOrdinal("code"));
 
                 editReader.Close();
-
-                Console.WriteLine($"Editing employee {firstName} {lastName} ({code})");
-
+                
                 // Let the user choose what to edit
                 Console.WriteLine(
                     "Choose data to edit:\n1 - First name\n2 - Last name\n3 - Date of birth\n4 - Position");

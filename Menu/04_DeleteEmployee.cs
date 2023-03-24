@@ -19,19 +19,14 @@ public static class MenuDeleteEmployee
             switch (answer)
             {
                 case "1":
-                    Console.WriteLine("Last name: ");
-
                     DeleteByLastName.DeleteEmployeeByLastName();
 
                     break;
                 case "2":
-                    Console.WriteLine("Code: ");
-
                     DeleteByCode.DeleteEmployeeByCode();
 
                     break;
                 case "3":
-                    Console.WriteLine("ID: ");
                     DeleteById.DeleteEmployeeById();
                     break;
                 case "4":

@@ -36,9 +36,7 @@ public class EditByCode
                 string code = editReader.GetString(editReader.GetOrdinal("code"));
 
                 editReader.Close();
-
-                Console.WriteLine($"Editing employee {firstName} {lastName} ({code})");
-
+                
                 // Let the user choose what to edit
                 Console.WriteLine(
                     "Choose data to edit:\n1 - First name\n2 - Last name\n3 - Date of birth\n4 - Position");
