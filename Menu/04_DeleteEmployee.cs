@@ -1,10 +1,10 @@
-using Repair.Menu.DatabaseMethods.EmployeeEdit;
+using Repair.Menu.DatabaseMethods.EmployeeDelete;
 
 namespace Repair.Menu;
 
-public static class MenuEditEmployee
+public static class MenuDeleteEmployee
 {
-    public static void EditEmployee()
+    public static void DeleteEmployee()
     {
         string? answer;
         do
@@ -21,18 +21,18 @@ public static class MenuEditEmployee
                 case "1":
                     Console.WriteLine("Last name: ");
 
-                    EditByLastName.EditEmployeeDataByIndex();
+                    DeleteByLastName.DeleteEmployeeByLastName();
 
                     break;
                 case "2":
                     Console.WriteLine("Code: ");
 
-                    EditByCode.EditEmployeeDataByIndex();
+                    DeleteByCode.DeleteEmployeeByCode();
 
                     break;
                 case "3":
                     Console.WriteLine("ID: ");
-                    EditById.EditEmployeeDataByIndex();
+                    DeleteById.DeleteEmployeeById();
                     break;
                 case "4":
                     break;

@@ -1,4 +1,4 @@
-namespace Repair.Menu.EmployeesMethods;
+namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 static class IdGenerator
 {

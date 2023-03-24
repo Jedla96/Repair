@@ -1,7 +1,4 @@
-using System.Globalization;
-using Npgsql;
-
-namespace Repair.Menu.EmployeesMethods;
+namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 public static class EmployeeDataChoose
 {

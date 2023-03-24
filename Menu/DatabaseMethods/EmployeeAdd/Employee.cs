@@ -1,5 +1,5 @@
 
-namespace Repair;
+namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 public class Employee
 {

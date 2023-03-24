@@ -1,6 +1,6 @@
 using Npgsql;
 
-namespace Repair.Menu.DatabaseMethods;
+namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 public class EmployeeStoreToDb
 {

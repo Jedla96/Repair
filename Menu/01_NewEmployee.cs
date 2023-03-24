@@ -1,5 +1,5 @@
-using Repair.Menu.EmployeesMethods;
 using Repair.Menu.DatabaseMethods;
+using Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 namespace Repair.Menu;
 
@@ -7,8 +7,8 @@ public static class MenuNewEmployee
 {
     public static void NewEmployee(List<Employee> employees)
     {
-        string code = EmployeesMethods.IdGenerator.GenerateId();
-        Console.WriteLine("Here is the ID of a new employee: " + code + "\nFill the following: ");
+        string code = IdGenerator.GenerateId();
+        Console.WriteLine("Here is the ID of a new employee: " + code + "\nFill the following:\n ");
 
         employees.Add(new Employee(string.Empty, string.Empty, DateTime.MinValue, string.Empty,
             code));

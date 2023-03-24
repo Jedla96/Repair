@@ -1,4 +1,4 @@
-﻿
+﻿using Repair.Menu.DatabaseMethods.EmployeeAdd;
 
 namespace Repair
 {
@@ -8,7 +8,6 @@ namespace Repair
         {
             List<Employee> employees = new List<Employee>();
             Menu.Menu.MenuSetUp(employees);
-            // Dodelat moznost odstraneni employee - Pridat salary system, dochazkove system
         }
     }
 }

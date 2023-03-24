@@ -11,7 +11,7 @@ public static class MenuListOfEmployees
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
-            using var cmd = new NpgsqlCommand("SELECT * FROM employees", connection);
+            using var cmd = new NpgsqlCommand("SELECT * FROM employees ORDER BY Id", connection);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -24,9 +24,8 @@ public static class MenuListOfEmployees
 
                 Console.WriteLine(
                     $"ID: {id}\nName: {firstName} {lastName}\nDate of birth: {dateOfBirth.ToString("dd/MM/yyyy")}\nPosition: {position} - Code: {code}\n");
-
-                connection.Close();
             }
+            connection.Close();
         }
     }
 }

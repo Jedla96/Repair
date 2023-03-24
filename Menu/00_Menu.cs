@@ -1,4 +1,6 @@
 
+using Repair.Menu.DatabaseMethods.EmployeeAdd;
+
 namespace Repair.Menu;
 
 public static class Menu
@@ -11,9 +13,9 @@ public static class Menu
             do
             {
                 Console.WriteLine("Choose action:");
-                Console.WriteLine("1 - Add new employee\n2 - See all employees\n3 - Edit employee data\n4 - Exit");
+                Console.WriteLine("1 - Add new employee\n2 - See all employees\n3 - Edit employee data\n4 - Delete employee\n5 - Exit");
                 answer = Console.ReadLine();
-            } while (answer != "1" && answer != "2" && answer != "3" && answer != "4");
+            } while (answer != "1" && answer != "2" && answer != "3" && answer != "4" && answer != "5");
 
             switch (answer)
             {
@@ -27,11 +29,14 @@ public static class Menu
                     MenuEditEmployee.EditEmployee();
                     break;
                 case "4":
+                    MenuDeleteEmployee.DeleteEmployee();
+                    break;
+                case "5":
                     break;
                 default:
                     MenuSetUp(employees);
                     break;
             }
-        } while (answer != "4");
+        } while (answer != "5");
     }
 }
