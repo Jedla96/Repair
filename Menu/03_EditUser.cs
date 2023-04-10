@@ -1,17 +1,17 @@
-using Repair.Menu.DatabaseMethods.EmployeeEdit;
+using Repair.Menu.DatabaseMethods.UserEdit;
 
 namespace Repair.Menu;
 
-public static class MenuEditEmployee
+public static class MenuEditUser
 {
-    public static void EditEmployee()
+    public static void EditUser()
     {
         string? answer;
         do
         {
             do
             {
-                Console.WriteLine("Choose the filter of the employee:");
+                Console.WriteLine("Choose the filter of the user:");
                 Console.WriteLine("\t1 - Last name\n\t2 - Code\n\t3 - ID\n\t4 - Back to menu");
                 answer = Console.ReadLine();
             } while (answer != "1" && answer != "2" && answer != "3" && answer != "4");
@@ -19,15 +19,15 @@ public static class MenuEditEmployee
             switch (answer)
             {
                 case "1":
-                    EditByLastName.EditEmployeeDataByIndex();
+                    EditByLastName.EditUserDataByIndex();
 
                     break;
                 case "2":
-                    EditByCode.EditEmployeeDataByIndex();
+                    EditByCode.EditUserDataByIndex();
 
                     break;
                 case "3":
-                    EditById.EditEmployeeDataByIndex();
+                    EditById.EditUserDataByIndex();
                     break;
                 case "4":
                     break;

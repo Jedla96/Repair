@@ -1,4 +1,4 @@
-﻿using Repair.Menu.DatabaseMethods.EmployeeAdd;
+﻿using Repair.Menu.DatabaseMethods.UserAdd;
 
 namespace Repair
 {
@@ -6,8 +6,8 @@ namespace Repair
     {
         static void Main(string[] args)
         {
-            List<Employee> employees = new List<Employee>();
-            Menu.Menu.MenuSetUp(employees);
+            List<User>users = new List<User>();
+            Menu.Menu.MenuSetUp(users);
         }
     }
 }

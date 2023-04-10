@@ -1,17 +1,17 @@
-using Repair.Menu.DatabaseMethods.EmployeeDelete;
+using Repair.Menu.DatabaseMethods.UserDelete;
 
 namespace Repair.Menu;
 
-public static class MenuDeleteEmployee
+public static class MenuDeleteUser
 {
-    public static void DeleteEmployee()
+    public static void DeleteUser()
     {
         string? answer;
         do
         {
             do
             {
-                Console.WriteLine("Choose the filter of the employee:");
+                Console.WriteLine("Choose the filter of the user:");
                 Console.WriteLine("\t1 - Last name\n\t2 - Code\n\t3 - ID\n\t4 - Back to menu");
                 answer = Console.ReadLine();
             } while (answer != "1" && answer != "2" && answer != "3" && answer != "4");
@@ -19,15 +19,15 @@ public static class MenuDeleteEmployee
             switch (answer)
             {
                 case "1":
-                    DeleteByLastName.DeleteEmployeeByLastName();
+                    DeleteByLastName.DeleteUserByLastName();
 
                     break;
                 case "2":
-                    DeleteByCode.DeleteEmployeeByCode();
+                    DeleteByCode.DeleteUserByCode();
 
                     break;
                 case "3":
-                    DeleteById.DeleteEmployeeById();
+                    DeleteById.DeleteUserById();
                     break;
                 case "4":
                     break;

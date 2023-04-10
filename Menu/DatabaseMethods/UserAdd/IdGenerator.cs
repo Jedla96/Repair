@@ -1,9 +1,9 @@
-namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
+namespace Repair.Menu.DatabaseMethods.UserAdd;
 
 static class IdGenerator
 {
-    private static string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      
+    private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
     public static string GenerateId()
     {
         Random rnd = new Random();

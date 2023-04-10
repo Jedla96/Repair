@@ -1,10 +1,10 @@
 using Npgsql;
 
-namespace Repair.Menu.DatabaseMethods.EmployeeFind;
+namespace Repair.Menu.DatabaseMethods.UserFind;
 
 public class FindIndexByLastName
 {
-    public static int FindEmployeeIndexOfLastName(string? lastName)
+    public static int FindUserIndexOfLastName(string? lastName)
     {
         string connectionString = "Server=localhost;Port=5432;Database=postgres;";
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -12,19 +12,19 @@ public class FindIndexByLastName
         {
             connection.Open();
 
-            // Find all employees with matching last names
+            // Find all users with matching last names
             NpgsqlCommand selectCommand =
-                new NpgsqlCommand($"SELECT * FROM employees WHERE lastname = '{lastName}'", connection);
+                new NpgsqlCommand($"SELECT * FROM users WHERE lastname = '{lastName}'", connection);
             NpgsqlDataReader reader = selectCommand.ExecuteReader();
 
             if (!reader.HasRows)
             {
-                Console.WriteLine("No employees found.");
+                Console.WriteLine("No users found.");
                 return -1;
             }
 
-            // Display a list of matching employees and let the user choose which one to edit
-            Console.WriteLine("Enter the index of the employee: ");
+            // Display a list of matching users and let the user choose which one to edit
+            Console.WriteLine("Enter the index of the user: ");
             int i = 1;
             while (reader.Read())
             {
@@ -38,13 +38,13 @@ public class FindIndexByLastName
 
             reader.Close();
 
-            int selectedEmployeeIndex;
+            int userIndex;
             do
             {
                 string? input = Console.ReadLine();
-                if (!int.TryParse(input, out selectedEmployeeIndex) ||
-                    selectedEmployeeIndex < 1 ||
-                    selectedEmployeeIndex > i - 1)
+                if (!int.TryParse(input, out userIndex) ||
+                    userIndex < 1 ||
+                    userIndex > i - 1)
                 {
                     Console.WriteLine($"Invalid index. Please enter a number between 1 and {i - 1}.");
                 }
@@ -54,7 +54,7 @@ public class FindIndexByLastName
                 }
             } while (true);
 
-            return selectedEmployeeIndex;
+            return userIndex;
         }
     }
 }

@@ -1,19 +1,19 @@
 
-namespace Repair.Menu.DatabaseMethods.EmployeeAdd;
+namespace Repair.Menu.DatabaseMethods.UserAdd;
 
-public class Employee
+public class User
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
-    public DateTime DateOfBrth { get; set; }
+    public DateTime DateOfBirth { get; set; }
     public string? Position { get; set; }
     public string? Code { get; }
 
-    public Employee(string firstName, string lastName, DateTime dateOfBrth, string position, string code)
+    public User (string firstName, string lastName, DateTime dateOfBirth, string position, string code)
     {
         FirstName = firstName;
         LastName = lastName;
-        DateOfBrth = dateOfBrth;
+        DateOfBirth = dateOfBirth;
         Position = position;
         Code = code;
     }

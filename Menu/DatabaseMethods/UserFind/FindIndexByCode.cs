@@ -1,10 +1,10 @@
 using Npgsql;
 
-namespace Repair.Menu.DatabaseMethods.EmployeeFind;
+namespace Repair.Menu.DatabaseMethods.UserFind;
 
-public class FindIndexByCode
+public abstract class FindIndexByCode
 {
-    public static int FindEmployeeIndexOfCode(string? code)
+    public static int FindUserIndexOfCode(string? code)
     {
         string connectionString = "Server=localhost;Port=5432;Database=postgres;";
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -12,20 +12,20 @@ public class FindIndexByCode
         {
             connection.Open();
 
-            // Find all employees with matching code
+            // Find all users with matching code
             NpgsqlCommand selectCommand =
-                new NpgsqlCommand($"SELECT * FROM employees WHERE code = '{code}'", connection);
+                new NpgsqlCommand($"SELECT * FROM users WHERE code = '{code}'", connection);
             NpgsqlDataReader reader = selectCommand.ExecuteReader();
 
             if (!reader.HasRows)
             {
-                Console.WriteLine("No employees found.");
+                Console.WriteLine("No users found.");
                 return -1;
             }
 
-            // Display a list of matching employees and let the user choose which one to edit
-            Console.WriteLine("Employee found: \n");
-            int employeeIndex = 1;
+            // Display a list of matching users and let the user choose which one to edit
+            Console.WriteLine("User found: \n");
+            int userIndex = 1;
             reader.Read();
             
                 string firstNameFind = reader.GetString(reader.GetOrdinal("firstname"));
@@ -37,7 +37,7 @@ public class FindIndexByCode
                 reader.Close();
 
 
-            return employeeIndex;
+            return userIndex;
         }
     }
 }

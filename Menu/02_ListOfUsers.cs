@@ -3,15 +3,15 @@ using Repair.Menu.DatabaseMethods;
 
 namespace Repair.Menu;
 
-public static class MenuListOfEmployees
+public static class MenuListOfUsers
 {
-    public static void ListOfEmployees()
+    public static void ListOfUsers()
     {
         string connectionString = "Server=localhost;Port=5432;Database=postgres;";
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
-            using var cmd = new NpgsqlCommand("SELECT * FROM employees ORDER BY Id", connection);
+            using var cmd = new NpgsqlCommand("SELECT * FROM users ORDER BY Id", connection);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
