@@ -1,7 +1,6 @@
 using Npgsql;
-using Repair.Menu.DatabaseMethods;
 
-namespace Repair.Menu;
+namespace Repair.Menu.MenuAdmin;
 
 public static class MenuListOfUsers
 {

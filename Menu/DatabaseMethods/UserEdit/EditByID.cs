@@ -1,3 +1,4 @@
+using System.Globalization;
 using Npgsql;
 using Repair.Menu.DatabaseMethods.UserFind;
 
@@ -16,7 +17,7 @@ public class EditById
             bool validInput = false;
             while (!validInput)
             {
-                string answer = Console.ReadLine();
+                string? answer = Console.ReadLine();
 
                 if (int.TryParse(answer, out selectAnswer))
                 {
@@ -43,10 +44,10 @@ public class EditById
                 editReader.Read();
 
                 int userId = editReader.GetInt32(editReader.GetOrdinal("id"));
-                string firstName = editReader.GetString(editReader.GetOrdinal("firstname"));
-                string lastName = editReader.GetString(editReader.GetOrdinal("lastname"));
+                string? firstName = editReader.GetString(editReader.GetOrdinal("firstname"));
+                string? lastName = editReader.GetString(editReader.GetOrdinal("lastname"));
                 DateTime dateOfBirth = editReader.GetDateTime(editReader.GetOrdinal("dateofbirth"));
-                string position = editReader.GetString(editReader.GetOrdinal("position"));
+                string? position = editReader.GetString(editReader.GetOrdinal("position"));
                 string code = editReader.GetString(editReader.GetOrdinal("code"));
 
                 editReader.Close();
@@ -70,7 +71,7 @@ public class EditById
                         break;
                     case "2":
                         Console.WriteLine("Enter new last name:");
-                        string newLastName = Console.ReadLine();
+                        string? newLastName = Console.ReadLine();
                         NpgsqlCommand updateLastNameCommand =
                             new NpgsqlCommand(
                                 $"UPDATE users SET lastname = '{newLastName}' WHERE id = {userId}",
@@ -86,8 +87,8 @@ public class EditById
                             Console.WriteLine("Enter new date of birth (dd/mm/yyyy):");
                             try
                             {
-                                newDateOfBirth = DateTime.Parse(Console.ReadLine());
-                                DateTime.TryParse(newDateOfBirth.ToString(), out newDateOfBirth);
+                                newDateOfBirth = DateTime.Parse(Console.ReadLine()!);
+                                DateTime.TryParse(newDateOfBirth.ToString(CultureInfo.CurrentCulture), out newDateOfBirth);
                                 validDate = false;
                             }
                             catch
@@ -106,7 +107,7 @@ public class EditById
 
                     case "4":
                         Console.WriteLine("Enter new position:");
-                        string newPosition = Console.ReadLine();
+                        string? newPosition = Console.ReadLine();
                         NpgsqlCommand updatePositionCommand =
                             new NpgsqlCommand(
                                 $"UPDATE users SET position = '{newPosition}' WHERE id = {userId}",

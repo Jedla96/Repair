@@ -2,7 +2,7 @@ namespace Repair.Menu.DatabaseMethods.UserAdd;
 
 static class IdGenerator
 {
-    private const string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private const string Chars = "0123456789";
 
     public static string GenerateId()
     {

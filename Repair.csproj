@@ -26,4 +26,8 @@
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Menu\MenuUser" />
+  </ItemGroup>
+
 </Project>

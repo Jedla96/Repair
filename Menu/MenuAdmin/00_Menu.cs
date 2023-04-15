@@ -1,7 +1,7 @@
+using Repair.Menu.DatabaseMethods;
 
-using Repair.Menu.DatabaseMethods.UserAdd;
 
-namespace Repair.Menu;
+namespace Repair.Menu.MenuAdmin;
 
 public static class Menu
 {

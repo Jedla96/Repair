@@ -1,7 +1,7 @@
 using Repair.Menu.DatabaseMethods;
 using Repair.Menu.DatabaseMethods.UserAdd;
 
-namespace Repair.Menu;
+namespace Repair.Menu.MenuAdmin;
 
 public static class MenuNewUser
 {
@@ -19,6 +19,8 @@ public static class MenuNewUser
             UserDataChoose.LastNameChoose(users, index);
             UserDataChoose.DateChoose(users, index);
             UserDataChoose.PositionChoose(users, index);
+            UserDataChoose.PasswordChoose(users, index);
+            UserDataChoose.LoginCreate(users,index);
             UserStoreToDb.StoreUserToDatabase(users,index);
         }
         Console.WriteLine(

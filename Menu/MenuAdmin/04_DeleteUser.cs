@@ -1,10 +1,10 @@
-using Repair.Menu.DatabaseMethods.UserEdit;
+using Repair.Menu.DatabaseMethods.UserDelete;
 
-namespace Repair.Menu;
+namespace Repair.Menu.MenuAdmin;
 
-public static class MenuEditUser
+public static class MenuDeleteUser
 {
-    public static void EditUser()
+    public static void DeleteUser()
     {
         string? answer;
         do
@@ -19,15 +19,15 @@ public static class MenuEditUser
             switch (answer)
             {
                 case "1":
-                    EditByLastName.EditUserDataByIndex();
+                    DeleteByLastName.DeleteUserByLastName();
 
                     break;
                 case "2":
-                    EditByCode.EditUserDataByIndex();
+                    DeleteByCode.DeleteUserByCode();
 
                     break;
                 case "3":
-                    EditById.EditUserDataByIndex();
+                    DeleteById.DeleteUserById();
                     break;
                 case "4":
                     break;

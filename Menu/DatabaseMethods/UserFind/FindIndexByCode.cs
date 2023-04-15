@@ -27,16 +27,16 @@ public abstract class FindIndexByCode
             Console.WriteLine("User found: \n");
             int userIndex = 1;
             reader.Read();
-            
-                string firstNameFind = reader.GetString(reader.GetOrdinal("firstname"));
-                string lastNameFind = reader.GetString(reader.GetOrdinal("lastname"));
-                string codeFind = reader.GetString(reader.GetOrdinal("code"));
 
-                Console.WriteLine($"{firstNameFind} {lastNameFind} ({codeFind})\n");
+            string firstNameFind = reader.GetString(reader.GetOrdinal("firstname"));
+            string lastNameFind = reader.GetString(reader.GetOrdinal("lastname"));
+            string codeFind = reader.GetString(reader.GetOrdinal("code"));
 
-                reader.Close();
+            Console.WriteLine($"{firstNameFind} {lastNameFind} ({codeFind})\n");
 
+            reader.Close();
 
+            connection.Close();
             return userIndex;
         }
     }
