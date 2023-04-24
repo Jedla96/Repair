@@ -61,14 +61,19 @@ public abstract class DeleteById
                 switch (deleteAnswer)
                 {
                     case "1":
-                        NpgsqlCommand deleteCommand =
+                        NpgsqlCommand deleteCommand1 =
                             new NpgsqlCommand(
-                                $"DELETE FROM users WHERE id = '{selectAnswer}'",
+                                $"DELETE FROM users WHERE code = '{selectAnswer}'",
                                 connection);
-                        int rowsAffected = deleteCommand.ExecuteNonQuery();
+                        NpgsqlCommand deleteCommand2 =
+                            new NpgsqlCommand(
+                                $"DELETE FROM accounts WHERE code = '{selectAnswer}'",
+                                connection);
+                        int rowsAffected = deleteCommand1.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
                             Console.WriteLine($"User deleted successfully.");
+                            deleteCommand2.ExecuteNonQuery();
                         }
                         else
                         {

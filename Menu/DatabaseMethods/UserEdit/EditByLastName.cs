@@ -51,21 +51,31 @@ public abstract class EditByLastName
                     case "1":
                         Console.WriteLine("Enter new first name:");
                         string? newFirstName = Console.ReadLine();
-                        NpgsqlCommand updateFirstNameCommand =
+                        NpgsqlCommand updateFirstNameCommand1 =
                             new NpgsqlCommand(
                                 $"UPDATE users SET firstname = '{newFirstName}' WHERE id = {userId}",
                                 connection);
-                        updateFirstNameCommand.ExecuteNonQuery();
+                        NpgsqlCommand updateFirstNameCommand2 =
+                            new NpgsqlCommand(
+                                $"UPDATE accounts SET firstname = '{newFirstName}' WHERE id = {userId}",
+                                connection);
+                        updateFirstNameCommand1.ExecuteNonQuery();
+                        updateFirstNameCommand2.ExecuteNonQuery();
                         firstName = newFirstName;
                         break;
                     case "2":
                         Console.WriteLine("Enter new last name:");
                         string? newLastName = Console.ReadLine();
-                        NpgsqlCommand updateLastNameCommand =
+                        NpgsqlCommand updateLastNameCommand1 =
                             new NpgsqlCommand(
                                 $"UPDATE users SET lastname = '{newLastName}' WHERE id = {userId}",
                                 connection);
-                        updateLastNameCommand.ExecuteNonQuery();
+                        NpgsqlCommand updateLastNameCommand2 =
+                            new NpgsqlCommand(
+                                $"UPDATE accounts SET lastname = '{newLastName}' WHERE id = {userId}",
+                                connection);
+                        updateLastNameCommand1.ExecuteNonQuery();
+                        updateLastNameCommand2.ExecuteNonQuery();
                         lastName = newLastName;
                         break;
                     case "3":
