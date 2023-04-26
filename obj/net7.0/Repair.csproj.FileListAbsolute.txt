@@ -195,3 +195,4 @@
 /Users/alesjedlicka/RiderProjects/Repair/bin/net7.0/System.Security.Cryptography.Pkcs.dll
 /Users/alesjedlicka/RiderProjects/Repair/bin/net7.0/System.Security.Cryptography.Xml.dll
 /Users/alesjedlicka/RiderProjects/Repair/bin/net7.0/runtimes/win/lib/netcoreapp2.1/System.Security.Cryptography.Pkcs.dll
+/Users/alesjedlicka/RiderProjects/Repair/bin/net7.0/Dapper.dll

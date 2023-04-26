@@ -7,6 +7,7 @@
 /Users/alesjedlicka/MyExe/Accelergreat.EntityFramework.PostgreSql.dll
 /Users/alesjedlicka/MyExe/Azure.Core.dll
 /Users/alesjedlicka/MyExe/Azure.Identity.dll
+/Users/alesjedlicka/MyExe/Dapper.dll
 /Users/alesjedlicka/MyExe/EntityFramework.SqlServer.dll
 /Users/alesjedlicka/MyExe/EntityFramework.dll
 /Users/alesjedlicka/MyExe/FSharp.Core.dll

@@ -29,7 +29,8 @@ namespace Repair.Login
                     }
 
                     reader.Read();
-                    string? storedPassword = reader["password"].ToString(); // Assuming password column name is "password"
+                    string? storedPassword =
+                        reader["password"].ToString(); // Assuming password column name is "password"
                     reader.Close(); // Close the reader before continuing
 
                     Console.WriteLine("Password: ");
@@ -43,13 +44,22 @@ namespace Repair.Login
                             List<User> users = new List<User>();
                             Menu.MenuAdmin.Menu.MenuSetUp(users);
                         }
+                        else if (username != null && password != null)
+                        {
+                            NpgsqlCommand selectCommand1 =
+                                new NpgsqlCommand(
+                                    "SELECT code FROM users WHERE login = @username AND password = @password",
+                                    connection);
+                            selectCommand1.Parameters.AddWithValue("username", username);
+                            selectCommand1.Parameters.AddWithValue("password", password);
+                            string? code = selectCommand1.ExecuteScalar()?.ToString();
+                            Menu.MenuUser.Menu.MenuSetUp(code);
+                        }
                         else
                         {
-                            Console.WriteLine(" /\\_/\\");
-                            Console.WriteLine("( o.o )");
-                            Console.WriteLine(" > ^ <");
-                            Console.WriteLine("Meow!....Not yet bro.. Meow!....");
+                            throw new Exception("Jsem kokot a je to null");
                         }
+
                         break;
                     }
                     else

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TIiy7HPxq4vVa7ao4ywlQ6Mhu8RW24Ovxss4amlnv7ta0EaR8sVMrw4fvTu2w+cxC6BAkdR7qTJqoIONmosVCA==",
+  "dgSpecHash": "4nAZKaHWX6rxi5j+LQjP8kfuazxOYj+6hOAD6SQZxkbNHgN0umPErKR8RufJDEnTZ1cy82oFQjiOa2ZxwqRUjQ==",
   "success": true,
   "projectFilePath": "/Users/alesjedlicka/RiderProjects/Repair/Repair.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "/Users/alesjedlicka/.nuget/packages/accelergreat.entityframework.postgresql/2.0.0/accelergreat.entityframework.postgresql.2.0.0.nupkg.sha512",
     "/Users/alesjedlicka/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/alesjedlicka/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
+    "/Users/alesjedlicka/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/Users/alesjedlicka/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/alesjedlicka/.nuget/packages/fsharp.core/6.0.7/fsharp.core.6.0.7.nupkg.sha512",
     "/Users/alesjedlicka/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
